@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Card — Swift AI Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0E1B5C;
+    --royal:#3D5AFE;
+    --gold:#FBB034;
+    --border:#DCE1F4;
+    --card:#FFFFFF;
+    --text-2:#33396B;
+    --text-3:#6670A3;
+    --chip-bg:#EEF1FF;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:#E7EAF7;
+    font-family:'Rubik', sans-serif;
+    color:var(--navy);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:28px 12px 48px;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  .toolbar{
+    width:210mm;
+    max-width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:14px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    color:var(--text-3);
+  }
+  .toolbar a{color:var(--royal);text-decoration:none;font-weight:600;}
+  .print-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:var(--royal);
+    color:#fff;
+    border:none;
+    border-radius:999px;
+    padding:9px 16px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:0 6px 16px rgba(61,90,254,0.3);
+  }
+  .print-btn:hover{background:#3350EE;}
+
+  .sheet{
+    width:210mm;
+    max-width:100%;
+    min-height:297mm;
+    background:var(--card);
+    box-shadow:0 12px 44px rgba(14,27,92,0.16);
+    padding:13mm 12mm;
+    display:flex;
+    flex-direction:column;
+    gap:10mm;
+  }
+
+  /* header */
+  .card-header{
+    text-align:center;
+    padding-bottom:6mm;
+    border-bottom:1.5px dashed var(--border);
+  }
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px;
+    color:var(--royal);
+    letter-spacing:.03em;
+    margin-bottom:8px;
+  }
+  h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:30px;
+    font-weight:700;
+    margin:0 0 6px;
+    letter-spacing:-0.01em;
+    background:linear-gradient(120deg, var(--navy), var(--royal));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .card-sub{
+    margin:0;
+    font-size:13px;
+    color:var(--text-2);
+  }
+
+  /* section rows */
+  .card-row{
+    flex:1;
+    display:grid;
+    grid-template-columns:16mm 1fr;
+    gap:8px;
+    align-items:stretch;
+  }
+  .row-label{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    color:var(--text-3);
+    border-right:1.5px dashed var(--border);
+  }
+  .row-label .icon{width:17px;height:17px;color:var(--royal);}
+  .row-label span{
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+  .row-boxes{
+    display:grid;
+    grid-auto-flow:column;
+    grid-auto-columns:1fr;
+    gap:9px;
+  }
+  .prompt-box{
+    background:#FBFCFF;
+    border:1.4px solid var(--border);
+    border-radius:10px;
+    padding:10px 12px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:6px;
+    position:relative;
+  }
+  .box-num{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px;
+    font-weight:700;
+    color:var(--royal);
+    background:var(--chip-bg);
+    border-radius:6px;
+    width:19px;height:19px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .prompt-box p{
+    margin:0;
+    font-size:11.6px;
+    line-height:1.42;
+    color:var(--navy);
+  }
+  .prompt-box b{color:var(--royal);font-weight:600;}
+
+  /* footer */
+  .card-footer{
+    border-top:1.5px dashed var(--border);
+    padding-top:6mm;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  .card-footer p{
+    margin:0;
+    font-size:11px;
+    color:var(--text-2);
+  }
+  .card-footer p strong{color:var(--navy);}
+  .card-footer .meta{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px;
+    color:var(--text-3);
+    text-align:right;
+    white-space:nowrap;
+  }
+
+  @media (max-width: 780px){
+    .sheet{padding:20px;}
+    h1{font-size:24px;}
+    .card-row{grid-template-columns:1fr;}
+    .row-label{flex-direction:row;border-right:none;border-bottom:1.5px dashed var(--border);padding-bottom:6px;}
+    .row-label span{writing-mode:horizontal-tb;transform:none;}
+    .row-boxes{grid-auto-flow:row;grid-auto-columns:unset;grid-template-columns:1fr;}
+    .card-footer{flex-direction:column;align-items:flex-start;}
+    .card-footer .meta{text-align:left;}
+  }
+
+  @page{ size:A4; margin:0; }
+  @media print{
+    body{background:none;padding:0;}
+    .toolbar{display:none;}
+    .sheet{box-shadow:none;width:auto;min-height:auto;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="toolbar no-print">
+    <a href="index.html">&larr; Back to interactive page</a>
+    <button class="print-btn" type="button" onclick="window.print()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <div class="sheet">
+
+    <div class="card-header">
+      <div class="eyebrow">
+        <span>AAI-E-MC1-S01-CARD01</span>
+        <span>MC1 · 1.1 First Contact</span>
+      </div>
+      <h1>Ten Starter Prompts</h1>
+      <p class="card-sub">Ready-to-use AI prompts for study, work and home — swap the <b style="color:var(--royal)">[bracket]</b>, read every answer before you use it.</p>
+    </div>
+
+    <div class="card-row">
+      <div class="row-label">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Study</span>
+      </div>
+      <div class="row-boxes">
+        <div class="prompt-box">
+          <span class="box-num">1</span>
+          <p>Explain <b>[topic name]</b> in simple terms, as if to a first-year student, using one everyday example. Keep it to 150 words.</p>
+        </div>
+        <div class="prompt-box">
+          <span class="box-num">2</span>
+          <p>Turn these notes into 5 short revision points I can read before a test: <b>[paste your notes here]</b>.</p>
+        </div>
+        <div class="prompt-box">
+          <span class="box-num">3</span>
+          <p>I have an assignment due on <b>[date]</b> about <b>[topic]</b>. Suggest a simple structure with headings, and one question to answer under each heading.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-row">
+      <div class="row-label">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        <span>Work</span>
+      </div>
+      <div class="row-boxes">
+        <div class="prompt-box">
+          <span class="box-num">4</span>
+          <p>Write a short reminder for my batch about <b>[practical session, e.g. tool return]</b>. No more than 3 lines, in plain language.</p>
+        </div>
+        <div class="prompt-box">
+          <span class="box-num">5</span>
+          <p>Here is my workshop inventory list. Point out anything missing or unclear, and suggest a simple format to record it: <b>[paste your list]</b>.</p>
+        </div>
+        <div class="prompt-box">
+          <span class="box-num">6</span>
+          <p>Draft a polite email to my <b>[facilitator / faculty title]</b> asking for <b>[a short extension / a clarification]</b> on <b>[assignment name]</b>. Keep it under 80 words.</p>
+        </div>
+        <div class="prompt-box">
+          <span class="box-num">7</span>
+          <p>Make a checklist for my project on <b>[project topic]</b>, from first draft to submission on <b>[date]</b>. No more than 8 items.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-row">
+      <div class="row-label">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+        <span>Home</span>
+      </div>
+      <div class="row-boxes">
+        <div class="prompt-box">
+          <span class="box-num">8</span>
+          <p>Suggest a simple one-week plan to practise <b>[subject or skill]</b>, with one rest day and no more than one hour a day.</p>
+        </div>
+        <div class="prompt-box">
+          <span class="box-num">9</span>
+          <p>Turn these notes into a short checklist for <b>[event, e.g. a study group meet-up]</b>: <b>[paste your notes]</b>.</p>
+        </div>
+        <div class="prompt-box">
+          <span class="box-num">10</span>
+          <p>Summarise this in 3 plain-English bullet points: <b>[paste any short text]</b>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <p><strong>Before you use it:</strong> read the whole answer · check names, dates &amp; facts · AI supports your work, it doesn't replace your teacher or facilitator.</p>
+      <div class="meta">Swift AI Academy<br>PC 1.1–1.5 · English</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
