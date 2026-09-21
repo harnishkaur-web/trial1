@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ten Starter Prompts</title>
+<title>Ten Starter Prompts — Slides</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -24,7 +24,6 @@
     --text-3:#6670A3;
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
   html,body{margin:0;padding:0;}
   body{
     background:var(--bg);
@@ -38,10 +37,11 @@
     padding:32px 24px 60px;
   }
 
-  /* header */
+  /* header, shared across slides */
   .deck-header{
     padding-bottom:16px;
-    margin-bottom:8px;
+    margin-bottom:22px;
+    border-bottom:1px solid var(--border);
   }
   .eyebrow{
     display:flex;
@@ -72,46 +72,73 @@
     color:var(--text-2);
   }
 
-  /* sticky jump-to nav, replaces slide-by-slide paging */
-  .section-nav{
-    position:sticky;
-    top:0;
-    z-index:10;
+  /* progress dots */
+  .dots{
     display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    background:var(--bg);
-    padding:14px 0 16px;
-    margin-bottom:8px;
-    border-bottom:1.5px solid var(--border);
+    gap:6px;
+    margin:18px 0 26px;
   }
-  .section-nav a{
-    font-family:'JetBrains Mono', monospace;
-    font-size:11.5px;
-    font-weight:700;
-    color:var(--text-3);
-    background:#fff;
-    border:1.5px solid var(--border);
+  .dots span{
+    height:6px;
+    flex:1;
     border-radius:999px;
-    padding:7px 13px;
-    text-decoration:none;
-    transition:all .15s ease;
+    background:var(--border);
+    transition:background .25s ease;
   }
-  .section-nav a:hover{border-color:var(--royal);color:var(--royal);background:var(--royal-tint);}
+  .dots span.done, .dots span.active{background:var(--royal);}
 
-  /* page sections (was: slides) */
-  .page-section{
-    padding:34px 0 36px;
-    border-bottom:1px solid var(--border);
-    scroll-margin-top:64px;
+  /* nav */
+  .back-btn{
+    display:none;
+    align-items:center;
+    gap:6px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:999px;
+    padding:9px 16px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    font-weight:600;
+    color:var(--navy);
+    cursor:pointer;
+    margin-bottom:20px;
   }
-  .page-section:last-of-type{border-bottom:none;padding-bottom:0;}
-  .page-section h2{
+  .back-btn:hover{border-color:var(--royal);color:var(--royal);}
+  .slide.show .back-btn{display:inline-flex;}
+
+  .nav-row{
+    display:flex;
+    justify-content:flex-end;
+    margin-top:26px;
+  }
+  .next-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--royal);
+    color:#fff;
+    border:none;
+    border-radius:999px;
+    padding:12px 22px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:13.5px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(61,90,254,0.3);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .next-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(61,90,254,0.4);}
+
+  /* slides */
+  .slide{display:none;}
+  .slide.show{display:block;animation:fadeUp .35s ease;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  .slide h2{
     font-family:'Space Grotesk', sans-serif;
     font-size:21px;
     margin:0 0 6px;
   }
-  .page-section .lead{
+  .slide .lead{
     margin:0 0 20px;
     font-size:14.5px;
     color:var(--text-2);
@@ -164,8 +191,6 @@
     border-radius:16px;
     padding:18px 10px;
     text-align:center;
-    text-decoration:none;
-    display:block;
     transition:transform .2s ease, box-shadow .2s ease;
   }
   .chip-card:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(14,27,92,0.1);}
@@ -363,7 +388,7 @@
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:14px;
-    margin-bottom:8px;
+    margin-bottom:26px;
   }
   .recap-card{
     position:relative;
@@ -397,7 +422,11 @@
   .recap-3 .badge-num{background:#1E9E6B;}
   .recap-3 .icon-mini{color:#1E9E6B;}
 
-  .top-link{
+  @media (max-width:600px){
+    .recap-grid{grid-template-columns:1fr;}
+    .recap-card{grid-column:auto !important;}
+  }
+  .restart-btn{
     display:inline-flex;align-items:center;gap:8px;
     background:#fff;
     border:1.5px solid var(--border);
@@ -406,25 +435,19 @@
     font-family:'JetBrains Mono', monospace;
     font-size:13px;font-weight:700;
     color:var(--navy);
-    text-decoration:none;
-    margin-top:18px;
+    cursor:pointer;
   }
-  .top-link:hover{border-color:var(--royal);color:var(--royal);}
+  .restart-btn:hover{border-color:var(--royal);color:var(--royal);}
 
   @media (max-width:600px){
     .deck{padding:22px 16px 48px;}
     h1{font-size:23px;}
     .prompt-box{flex-direction:column;}
-    .recap-grid{grid-template-columns:1fr;}
-    .recap-card{grid-column:auto !important;}
-    .chip-grid{grid-template-columns:1fr 1fr 1fr;gap:8px;}
-    .chip-card{padding:12px 6px;}
-    .chip-card small{display:none;}
   }
 </style>
 </head>
 <body>
-<div class="deck" id="top">
+<div class="deck">
 
   <div class="deck-header">
     <div class="eyebrow">
@@ -437,18 +460,14 @@
     <p class="deck-sub">Ten ready-to-use AI prompts for study, work and home — and how to use them safely.</p>
   </div>
 
-  <nav class="section-nav">
-    <a href="#cautions">Before you start</a>
-    <a href="#study">Study</a>
-    <a href="#work">Work</a>
-    <a href="#home">Home</a>
-    <a href="#example">Example</a>
-    <a href="#tryit">Try it</a>
-    <a href="#recap">Recap</a>
-  </nav>
+  <div class="dots" id="dots"></div>
 
-  <!-- CAUTIONS -->
-  <section class="page-section" id="cautions">
+  <!-- SLIDE 1: CAUTIONS -->
+  <section class="slide" data-slide>
+    <button class="back-btn" type="button" onclick="goTo(current-1)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back
+    </button>
     <h2>1. Before you start</h2>
     <p class="lead">Three quick rules — read these before you try any prompt.</p>
 
@@ -485,33 +504,44 @@
     <div class="preview-row">
       <p class="lead-mini">Ten prompts, ready for —</p>
       <div class="chip-grid">
-        <a class="chip-card" href="#study">
+        <div class="chip-card">
           <div class="chip-icon c-study">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
           </div>
           <span>Study</span>
           <small>3 prompts</small>
-        </a>
-        <a class="chip-card" href="#work">
+        </div>
+        <div class="chip-card">
           <div class="chip-icon c-work">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
           </div>
           <span>Work</span>
           <small>4 prompts</small>
-        </a>
-        <a class="chip-card" href="#home">
+        </div>
+        <div class="chip-card">
           <div class="chip-icon c-home">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
           </div>
           <span>Home</span>
           <small>3 prompts</small>
-        </a>
+        </div>
       </div>
+    </div>
+
+    <div class="nav-row">
+      <button class="next-btn" type="button" onclick="goTo(current+1)">
+        Next: see the prompts
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
     </div>
   </section>
 
-  <!-- STUDY -->
-  <section class="page-section" id="study">
+  <!-- SLIDE 2: STUDY -->
+  <section class="slide" data-slide>
+    <button class="back-btn" type="button" onclick="goTo(current-1)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back
+    </button>
     <h2>2. Study — pick a prompt</h2>
     <p class="lead">Use these before class, for revision, or to plan an assignment.</p>
 
@@ -543,10 +573,21 @@
         </div>
       </div>
     </div>
+
+    <div class="nav-row">
+      <button class="next-btn" type="button" onclick="goTo(current+1)">
+        Next: Work prompts
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+    </div>
   </section>
 
-  <!-- WORK -->
-  <section class="page-section" id="work">
+  <!-- SLIDE 3: WORK -->
+  <section class="slide" data-slide>
+    <button class="back-btn" type="button" onclick="goTo(current-1)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back
+    </button>
     <h2>3. Work — pick a prompt</h2>
     <p class="lead">Use these for reminders, notes, emails and project planning.</p>
 
@@ -585,10 +626,21 @@
         </div>
       </div>
     </div>
+
+    <div class="nav-row">
+      <button class="next-btn" type="button" onclick="goTo(current+1)">
+        Next: Home prompts
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+    </div>
   </section>
 
-  <!-- HOME -->
-  <section class="page-section" id="home">
+  <!-- SLIDE 4: HOME -->
+  <section class="slide" data-slide>
+    <button class="back-btn" type="button" onclick="goTo(current-1)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back
+    </button>
     <h2>4. Home — pick a prompt</h2>
     <p class="lead">Use these for practice plans, small events, or a quick summary.</p>
 
@@ -620,10 +672,21 @@
         </div>
       </div>
     </div>
+
+    <div class="nav-row">
+      <button class="next-btn" type="button" onclick="goTo(current+1)">
+        Next: see an example
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+    </div>
   </section>
 
-  <!-- EXAMPLE -->
-  <section class="page-section" id="example">
+  <!-- SLIDE 5: EXAMPLE -->
+  <section class="slide" data-slide>
+    <button class="back-btn" type="button" onclick="goTo(current-1)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back
+    </button>
     <h2>5. See it filled in</h2>
     <p class="lead">Same prompt, before and after the brackets are replaced.</p>
 
@@ -655,10 +718,21 @@
       </div>
       <span style="align-self:center;">This is only an example answer — always read your own AI's response fully and check any fact before you use it.</span>
     </div>
+
+    <div class="nav-row">
+      <button class="next-btn" type="button" onclick="goTo(current+1)">
+        Next: try it yourself
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+    </div>
   </section>
 
-  <!-- TRY IT -->
-  <section class="page-section" id="tryit">
+  <!-- SLIDE 6: TRY IT + RECAP -->
+  <section class="slide" data-slide>
+    <button class="back-btn" type="button" onclick="goTo(current-1)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back
+    </button>
     <h2>6. Try it yourself</h2>
     <p class="lead">Pick any prompt from Study, Work or Home — then bring it here.</p>
 
@@ -678,10 +752,21 @@
         <div class="toggle-btn" onclick="selectToggle(this)">No, not yet</div>
       </div>
     </div>
+
+    <div class="nav-row">
+      <button class="next-btn" type="button" onclick="goTo(current+1)">
+        Next: quick recap
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+    </div>
   </section>
 
-  <!-- RECAP -->
-  <section class="page-section" id="recap">
+  <!-- SLIDE 7: RECAP -->
+  <section class="slide" data-slide>
+    <button class="back-btn" type="button" onclick="goTo(current-1)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back
+    </button>
     <h2>7. Quick recap</h2>
     <p class="lead">Three things to carry with you.</p>
 
@@ -708,20 +793,49 @@
       </div>
     </div>
 
-    <a class="top-link" href="#top">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-      Back to top
-    </a>
+    <div class="nav-row" style="justify-content:flex-start;">
+      <button class="restart-btn" type="button" onclick="goTo(0)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/></svg>
+        Start over
+      </button>
+    </div>
   </section>
 
 </div>
 
 <script>
+  var slides = document.querySelectorAll('[data-slide]');
+  var dotsWrap = document.getElementById('dots');
+  var current = 0;
+
+  slides.forEach(function(){
+    var dot = document.createElement('span');
+    dotsWrap.appendChild(dot);
+  });
+
+  function goTo(i){
+    if(i < 0 || i >= slides.length) return;
+    slides[current].classList.remove('show');
+    current = i;
+    slides[current].classList.add('show');
+    var dots = dotsWrap.children;
+    for(var d = 0; d < dots.length; d++){
+      dots[d].classList.remove('active','done');
+      if(d < current) dots[d].classList.add('done');
+      if(d === current) dots[d].classList.add('active');
+    }
+    var backBtn = slides[current].querySelector('.back-btn');
+    if(backBtn) backBtn.style.display = current === 0 ? 'none' : 'inline-flex';
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
   function selectToggle(el){
     var siblings = el.parentElement.querySelectorAll('.toggle-btn');
     siblings.forEach(function(s){ s.classList.remove('selected'); });
     el.classList.add('selected');
   }
+
+  goTo(0);
 </script>
 </body>
 </html>
