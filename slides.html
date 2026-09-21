@@ -145,28 +145,31 @@
   }
 
   /* caution cards */
-  .caution-grid{display:flex;flex-direction:column;gap:12px;}
+  .caution-grid{display:flex;flex-direction:column;gap:14px;}
   .caution{
     display:flex;
-    gap:14px;
+    gap:16px;
     align-items:flex-start;
-    background:var(--gold-tint);
-    border:1.5px solid #F6DBA6;
-    border-left:4px solid var(--gold);
-    border-radius:14px;
-    padding:16px 18px;
+    background:var(--card);
+    border:1.5px solid var(--border);
+    border-left:4px solid #FF8A65;
+    border-radius:16px;
+    padding:18px 20px;
+    box-shadow:0 6px 18px rgba(255,138,101,0.12);
+    transition:transform .2s ease, box-shadow .2s ease;
   }
+  .caution:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,138,101,0.18);}
   .caution .icon-wrap{
-    width:34px;height:34px;
-    border-radius:10px;
-    background:#fff;
+    width:48px;height:48px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#FF8A65,#FFC24B);
     display:flex;align-items:center;justify-content:center;
     flex-shrink:0;
-    color:var(--gold);
-    box-shadow:0 2px 6px rgba(251,176,52,0.25);
+    color:#fff;
+    box-shadow:0 6px 14px rgba(255,138,101,0.4);
   }
-  .caution .icon-wrap svg{width:18px;height:18px;}
-  .caution strong{display:block;font-size:14.5px;margin-bottom:3px;color:var(--navy);}
+  .caution .icon-wrap svg{width:24px;height:24px;}
+  .caution strong{display:block;font-size:15px;margin-bottom:4px;color:var(--navy);}
   .caution p{margin:0;font-size:13.5px;color:var(--text-2);}
 
   /* category row label */
@@ -258,15 +261,26 @@
   .answer-sample p:last-child{margin-bottom:0;}
 
   .note-box{
-    display:flex;gap:10px;align-items:flex-start;
-    background:var(--gold-tint);
-    border-left:3px solid var(--gold);
-    border-radius:10px;
-    padding:12px 14px;
+    display:flex;gap:12px;align-items:flex-start;
+    background:var(--card);
+    border:1.5px solid var(--border);
+    border-left:4px solid #FF8A65;
+    border-radius:12px;
+    padding:14px 16px;
     font-size:13px;
     color:var(--text-2);
+    box-shadow:0 4px 12px rgba(255,138,101,0.1);
   }
-  .note-box svg{width:16px;height:16px;color:var(--gold);flex-shrink:0;margin-top:1px;}
+  .note-box .icon-wrap{
+    width:28px;height:28px;
+    border-radius:9px;
+    background:linear-gradient(135deg,#FF8A65,#FFC24B);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+    color:#fff;
+    box-shadow:0 3px 8px rgba(255,138,101,0.35);
+  }
+  .note-box svg{width:15px;height:15px;flex-shrink:0;}
 
   /* interactive */
   .try-box{
@@ -587,8 +601,10 @@
     </div>
 
     <div class="note-box">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
-      <span>This is only an example answer — always read your own AI's response fully and check any fact before you use it.</span>
+      <div class="icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+      </div>
+      <span style="align-self:center;">This is only an example answer — always read your own AI's response fully and check any fact before you use it.</span>
     </div>
 
     <div class="nav-row">
