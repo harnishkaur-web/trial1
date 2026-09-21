@@ -172,6 +172,42 @@
   .caution strong{display:block;font-size:15px;margin-bottom:4px;color:var(--navy);}
   .caution p{margin:0;font-size:13.5px;color:var(--text-2);}
 
+  /* what's inside preview chips */
+  .preview-row{margin-top:24px;}
+  .preview-row .lead-mini{
+    text-align:center;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.04em;
+    color:var(--text-3);
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  .chip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .chip-card{
+    background:#fff;
+    border:1.5px solid var(--border);
+    border-radius:16px;
+    padding:18px 10px;
+    text-align:center;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .chip-card:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(14,27,92,0.1);}
+  .chip-icon{
+    width:46px;height:46px;
+    border-radius:13px;
+    margin:0 auto 10px;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;
+  }
+  .chip-icon svg{width:22px;height:22px;}
+  .chip-icon.c-study{background:linear-gradient(135deg,#3D5AFE,#7C90FF);box-shadow:0 6px 14px rgba(61,90,254,0.35);}
+  .chip-icon.c-work{background:linear-gradient(135deg,#FF8A65,#FFC24B);box-shadow:0 6px 14px rgba(255,138,101,0.35);}
+  .chip-icon.c-home{background:linear-gradient(135deg,#1E9E6B,#5FD79A);box-shadow:0 6px 14px rgba(30,158,107,0.35);}
+  .chip-card span{display:block;font-weight:700;font-size:13.5px;color:var(--navy);margin-bottom:2px;}
+  .chip-card small{display:block;font-size:11px;color:var(--text-3);}
+
   /* category row label */
   .cat-label{
     display:inline-flex;
@@ -412,6 +448,33 @@
         <div>
           <strong>Read the whole answer first</strong>
           <p>An AI answer is a draft, not the final word. Check it before you copy, send or act on it.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="preview-row">
+      <p class="lead-mini">Ten prompts, ready for —</p>
+      <div class="chip-grid">
+        <div class="chip-card">
+          <div class="chip-icon c-study">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <span>Study</span>
+          <small>3 prompts</small>
+        </div>
+        <div class="chip-card">
+          <div class="chip-icon c-work">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          </div>
+          <span>Work</span>
+          <small>4 prompts</small>
+        </div>
+        <div class="chip-card">
+          <div class="chip-icon c-home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+          </div>
+          <span>Home</span>
+          <small>3 prompts</small>
         </div>
       </div>
     </div>
