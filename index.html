@@ -2,217 +2,234 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ten Starter Prompts — Swift AI Academy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ten Starter Prompts · Swift AI Academy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="page">
-  <div class="bg-blob blob-1" aria-hidden="true"></div>
-  <div class="bg-blob blob-2" aria-hidden="true"></div>
+<div class="app">
 
-  <div class="schema-row">
-    <span>AAI-E-MC1-S01-CARD01</span>
-    <div class="schema-right">
-      <span>MC1 · 1.1 First Contact</span>
-      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
-        <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-        <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      </button>
-    </div>
-  </div>
+  <header class="top">
+    <div class="brand"><span class="brand-mark" aria-hidden="true"></span>Swift&nbsp;AI&nbsp;Academy</div>
+    <div class="top-meta">Section 1.1 · First Contact</div>
+  </header>
 
-  <h1>Ten Starter Prompts</h1>
-  <p class="subtitle">Ready-to-use prompts for your first time working with an approved AI tool — for study, work and home.</p>
+  <main class="stage">
 
-  <div class="hook">
-    Your first prompt does not need to be clever. It needs to be clear, safe, and checked before you use the answer.
-  </div>
-
-  <div class="rules">
-    <div class="rule">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12h8M8 16h5"/></svg>
-      <p><span class="lead">Use an approved tool</span>Only send these prompts through your institution's approved AI tool and account.</p>
-    </div>
-    <div class="rule">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
-      <p><span class="lead">Replace the brackets</span>Every <span class="bracket">[bracket]</span> is a placeholder. Swap it for your own real task, never personal data.</p>
-    </div>
-    <div class="rule">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
-      <p><span class="lead">Read before you use it</span>An AI answer is a draft. Check it before you copy, send or act on it.</p>
-    </div>
-  </div>
-
-  <div class="filter-bar">
-    <button class="filter-btn active" data-filter="all" aria-pressed="true">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
-      <span>All</span><span class="filter-count">10</span>
-    </button>
-    <button class="filter-btn" data-filter="study" aria-pressed="false">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-      <span>Study</span><span class="filter-count">3</span>
-    </button>
-    <button class="filter-btn" data-filter="work" aria-pressed="false">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-      <span>Work</span><span class="filter-count">4</span>
-    </button>
-    <button class="filter-btn" data-filter="home" aria-pressed="false">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
-      <span>Home</span><span class="filter-count">3</span>
-    </button>
-    <button class="surprise-btn" type="button" aria-label="Jump to a random prompt">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.3" fill="currentColor" stroke="none"/><circle cx="16" cy="8" r="1.3" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"/><circle cx="8" cy="16" r="1.3" fill="currentColor" stroke="none"/><circle cx="16" cy="16" r="1.3" fill="currentColor" stroke="none"/></svg>
-      <span>Surprise me</span>
-    </button>
-  </div>
-  <p class="filter-status" aria-live="polite">Showing all 10 prompts</p>
-
-  <!-- STUDY -->
-  <div class="group" data-category="study" id="group-study">
-    <div class="group-head">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-      <h2>Study</h2>
-      <span class="count">01–03</span>
-    </div>
-    <div class="prompts">
-      <div class="prompt">
-        <div class="num">1</div>
-        <div class="prompt-body">
-          <p class="context"><span class="tag">Higher ed</span>Understanding a topic before class</p>
-          <p class="text" data-prompt="Explain [topic name] in simple terms, as if to a first-year student, using one everyday example. Keep it to 150 words.">Explain <span class="bracket">[topic name]</span> in simple terms, as if to a first-year student, using one everyday example. Keep it to 150 words.</p>
+    <!-- 1 · Opening -->
+    <section class="slide" id="intro" data-next="Start">
+      <div class="card narrow">
+        <div class="head">
+          <div class="eyebrow">Prompt Card · 0.25 hrs · Practice</div>
+          <h1 class="title">Ten Starter Prompts</h1>
+          <p class="lede">Ten ready-made prompts for study, work and home. Pick one, fill in the blanks, and use it safely.</p>
         </div>
-        <button class="copy-btn" type="button">Copy</button>
-      </div>
-      <div class="prompt">
-        <div class="num">2</div>
-        <div class="prompt-body">
-          <p class="context"><span class="tag">ITI</span>Turning class notes into revision points</p>
-          <p class="text" data-prompt="Turn these notes into 5 short revision points I can read before a test: [paste your notes here].">Turn these notes into 5 short revision points I can read before a test: <span class="bracket">[paste your notes here]</span>.</p>
+        <div class="rule"></div>
+        <div class="grid g3 keep3">
+          <div class="tile center"><span class="dot-ic"><span data-i="book"></span></span><h3>Study</h3><p>3 prompts</p></div>
+          <div class="tile center"><span class="dot-ic"><span data-i="brief"></span></span><h3>Work</h3><p>4 prompts</p></div>
+          <div class="tile center"><span class="dot-ic"><span data-i="home"></span></span><h3>Home</h3><p>3 prompts</p></div>
         </div>
-        <button class="copy-btn" type="button">Copy</button>
+        <p class="code">AAI-E-MC1-S01-CARD01</p>
       </div>
-      <div class="prompt">
-        <div class="num">3</div>
-        <div class="prompt-body">
-          <p class="context"><span class="tag">ITI</span><span class="tag">Higher ed</span>Structuring an assignment</p>
-          <p class="text" data-prompt="I have an assignment due on [date] about [topic]. Suggest a simple structure with headings, and one question to answer under each heading.">I have an assignment due on <span class="bracket">[date]</span> about <span class="bracket">[topic]</span>. Suggest a simple structure with headings, and one question to answer under each heading.</p>
-        </div>
-        <button class="copy-btn" type="button">Copy</button>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- WORK -->
-  <div class="group" data-category="work" id="group-work">
-    <div class="group-head">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-      <h2>Work</h2>
-      <span class="count">04–07</span>
-    </div>
-    <div class="prompts">
-      <div class="prompt">
-        <div class="num">4</div>
-        <div class="prompt-body">
-          <p class="context"><span class="tag">ITI</span>Practical-session reminder</p>
-          <p class="text" data-prompt="Write a short reminder for my batch about [practical session, e.g. tool return]. No more than 3 lines, in plain language.">Write a short reminder for my batch about <span class="bracket">[practical session, e.g. tool return]</span>. No more than 3 lines, in plain language.</p>
+    <!-- 2 · Safety rules -->
+    <section class="slide" id="rules">
+      <div class="card">
+        <div class="head">
+          <div class="eyebrow">Before you start</div>
+          <h2 class="title">Three simple rules</h2>
+          <p class="lede">Keep these in mind every time you use a prompt.</p>
         </div>
-        <button class="copy-btn" type="button">Copy</button>
-      </div>
-      <div class="prompt">
-        <div class="num">5</div>
-        <div class="prompt-body">
-          <p class="context"><span class="tag">ITI</span>Workshop inventory notes</p>
-          <p class="text" data-prompt="Here is my workshop inventory list. Point out anything that looks missing or unclear, and suggest a simple format to record it: [paste your list].">Here is my workshop inventory list. Point out anything that looks missing or unclear, and suggest a simple format to record it: <span class="bracket">[paste your list]</span>.</p>
+        <div class="grid g3">
+          <div class="tile">
+            <span class="dot-ic"><span data-i="shield"></span></span>
+            <h3>Use an approved tool</h3>
+            <p>Only use the AI tool and account your institute allows. Not a random app.</p>
+          </div>
+          <div class="tile">
+            <span class="dot-ic"><span data-i="lock"></span></span>
+            <h3>Keep personal details out</h3>
+            <p>Never type your name, ID number, address or photos into a prompt.</p>
+          </div>
+          <div class="tile">
+            <span class="dot-ic"><span data-i="eye"></span></span>
+            <h3>Read the whole answer</h3>
+            <p>An AI answer is a first draft. Check it before you copy, send or use it.</p>
+          </div>
         </div>
-        <button class="copy-btn" type="button">Copy</button>
       </div>
-      <div class="prompt">
-        <div class="num">6</div>
-        <div class="prompt-body">
-          <p class="context"><span class="tag">Higher ed</span>Writing a campus email</p>
-          <p class="text" data-prompt="Draft a polite email to my [facilitator / faculty title] asking for [a short extension / a clarification] on [assignment name]. Keep it under 80 words.">Draft a polite email to my <span class="bracket">[facilitator / faculty title]</span> asking for <span class="bracket">[a short extension / a clarification]</span> on <span class="bracket">[assignment name]</span>. Keep it under 80 words.</p>
-        </div>
-        <button class="copy-btn" type="button">Copy</button>
-      </div>
-      <div class="prompt">
-        <div class="num">7</div>
-        <div class="prompt-body">
-          <p class="context"><span class="tag">Higher ed</span>Planning a project checklist</p>
-          <p class="text" data-prompt="Make a checklist for my project on [project topic], from first draft to submission on [date]. No more than 8 items.">Make a checklist for my project on <span class="bracket">[project topic]</span>, from first draft to submission on <span class="bracket">[date]</span>. No more than 8 items.</p>
-        </div>
-        <button class="copy-btn" type="button">Copy</button>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- HOME -->
-  <div class="group" data-category="home" id="group-home">
-    <div class="group-head">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
-      <h2>Home</h2>
-      <span class="count">08–10</span>
+    <!-- 3 · How the brackets work -->
+    <section class="slide" id="how" data-next="See the prompts">
+      <div class="card">
+        <div class="head">
+          <div class="eyebrow">How it works</div>
+          <h2 class="title">Fill in the [brackets]</h2>
+          <p class="lede">Every prompt has blanks in [brackets]. Swap each one for your own details.</p>
+        </div>
+        <div class="flow">
+          <div class="doc">
+            <div class="doc-head"><span data-i="file"></span>The prompt</div>
+            Explain <span class="br">[topic]</span> in simple words, as if to a first-year student. Use one everyday example.
+          </div>
+          <div class="flow-arrow"><span data-i="arrow-right"></span></div>
+          <div class="doc">
+            <div class="doc-head"><span data-i="check"></span>Filled in</div>
+            Explain <span class="fill">photosynthesis</span> in simple words, as if to a first-year student. Use one everyday example.
+          </div>
+        </div>
+        <div class="callout info"><span data-i="lock"></span><span>Keep it general. A bracket should never hold your name, ID number or address.</span></div>
+      </div>
+    </section>
+
+    <!-- 4 · Study prompts -->
+    <section class="slide" id="study" data-next="Next: work prompts">
+      <div class="card">
+        <div class="head">
+          <div class="eyebrow">Study · Prompts 1–3</div>
+          <h2 class="title">Prompts for study</h2>
+          <p class="lede">Use these before class, for revision, or to plan an assignment.</p>
+        </div>
+        <div class="prompts" data-prompts="study"></div>
+        <p class="small">Tap <span data-i="copy"></span> to copy a prompt.</p>
+      </div>
+    </section>
+
+    <!-- 5 · Work prompts -->
+    <section class="slide" id="work" data-next="Next: home prompts">
+      <div class="card">
+        <div class="head">
+          <div class="eyebrow">Work · Prompts 4–7</div>
+          <h2 class="title">Prompts for work</h2>
+          <p class="lede">Use these for reminders, emails, lists and project plans.</p>
+        </div>
+        <div class="prompts g2" data-prompts="work"></div>
+      </div>
+    </section>
+
+    <!-- 6 · Home prompts -->
+    <section class="slide" id="home" data-next="See an answer">
+      <div class="card">
+        <div class="head">
+          <div class="eyebrow">Home · Prompts 8–10</div>
+          <h2 class="title">Prompts for home</h2>
+          <p class="lede">Use these for practice plans, small events or quick summaries.</p>
+        </div>
+        <div class="prompts" data-prompts="home"></div>
+      </div>
+    </section>
+
+    <!-- 7 · Example answer -->
+    <section class="slide" id="answer" data-next="Try it yourself">
+      <div class="card narrow">
+        <div class="head">
+          <div class="eyebrow">Example</div>
+          <h2 class="title">What an answer can look like</h2>
+        </div>
+        <div class="doc source">
+          <div class="doc-head"><span data-i="chat"></span>You ask</div>
+          Explain <span class="fill">photosynthesis</span> in simple words, as if to a first-year student. Use one everyday example. Keep it under 150 words.
+        </div>
+        <div class="doc">
+          <div class="doc-head"><span data-i="bot"></span>A possible AI answer</div>
+          “Photosynthesis is how plants make their own food. Think of a leaf as a tiny kitchen. Sunlight is the stove. Water and carbon dioxide are the ingredients. The leaf cooks them into sugar for energy, and gives off oxygen as a bonus.”
+        </div>
+        <div class="callout"><span data-i="alert"></span><span>This is only an example. Always read your own AI's answer in full, and check any facts before you use it.</span></div>
+      </div>
+    </section>
+
+    <!-- 8 · Try it: pick and fill -->
+    <section class="slide" id="try-pick">
+      <div class="card narrow">
+        <div class="head">
+          <div class="eyebrow">Your turn · Step 1 of 2</div>
+          <h2 class="title">Pick a prompt and fill it in</h2>
+        </div>
+        <div class="field">
+          <span class="label" id="pick-label">1. Choose a prompt</span>
+          <div class="chips" id="pick-chips" role="group" aria-labelledby="pick-label"></div>
+        </div>
+        <div class="field">
+          <label class="label" for="my-prompt">2. Replace the [brackets] with your own details</label>
+          <textarea class="input" id="my-prompt" rows="4" placeholder="Choose a prompt above, or type your own here"></textarea>
+        </div>
+        <div class="row">
+          <button type="button" class="btn btn-ghost btn-sm" id="copy-mine"><span data-i="copy"></span>Copy my prompt</button>
+          <span class="small">Keep personal details out.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 · Try it: run and read -->
+    <section class="slide" id="try-run">
+      <div class="card narrow">
+        <div class="head">
+          <div class="eyebrow">Your turn · Step 2 of 2</div>
+          <h2 class="title">Run it and read the answer</h2>
+          <p class="lede">Open your approved AI tool. Paste your prompt there. Then paste the answer here.</p>
+        </div>
+        <div class="field">
+          <label class="label" for="ai-answer">The AI's answer</label>
+          <textarea class="input" id="ai-answer" rows="4" placeholder="Paste the answer here"></textarea>
+        </div>
+        <div class="field">
+          <span class="label" id="read-label">Did you read the whole answer before trusting it?</span>
+          <div class="seg" role="group" aria-labelledby="read-label" id="read-check">
+            <button type="button" aria-pressed="false" data-v="Yes"><span data-i="check"></span>Yes</button>
+            <button type="button" aria-pressed="false" data-v="Not yet"><span data-i="clock"></span>Not yet</button>
+          </div>
+        </div>
+        <div class="callout ok" id="read-yes" hidden><span data-i="check"></span><span>Good habit. Do this every time you use AI.</span></div>
+        <div class="callout info" id="read-no" hidden><span data-i="eye"></span><span>Read it now, from start to end, before you use any of it.</span></div>
+      </div>
+    </section>
+
+    <!-- 10 · Recap -->
+    <section class="slide" id="recap" data-next="Finish" data-icon="check">
+      <div class="card narrow">
+        <div class="head">
+          <div class="eyebrow">Quick recap</div>
+          <h2 class="title">Three things to remember</h2>
+        </div>
+        <ul class="list">
+          <li><span class="dot-ic"><span data-i="shield"></span></span><span class="li-text">Use only an approved AI tool and account.</span></li>
+          <li><span class="dot-ic"><span data-i="lock"></span></span><span class="li-text">Swap every [bracket] for your task. Never add personal details.</span></li>
+          <li><span class="dot-ic"><span data-i="eye"></span></span><span class="li-text">Read the whole answer, and check the facts, before you use it.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 11 · Complete -->
+    <section class="slide" id="done" data-next="Download the prompts" data-icon="download">
+      <div class="card bare">
+        <div class="badge-wrap">
+          <span class="badge-ring"></span>
+          <span class="badge-ring late"></span>
+          <span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span>
+          <span class="badge"><span data-i="check"></span></span>
+        </div>
+        <span class="kicker">Prompt card complete</span>
+        <h1 class="title">Ten Starter Prompts</h1>
+        <p class="status ok">10 prompts ready to use again and again</p>
+        <p class="lede">Download them to keep a copy. Your own prompt and answer are included.</p>
+        <button type="button" class="btn-link" data-go="intro"><span data-i="refresh"></span> Start again</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <div class="foot-left" id="progress" role="status"></div>
+    <div class="nav">
+      <button type="button" class="btn btn-ghost" id="back"><span data-i="arrow-left"></span><span class="btn-back-label">Back</span></button>
+      <button type="button" class="btn btn-primary" id="primary">Continue</button>
     </div>
-    <div class="prompts">
-      <div class="prompt">
-        <div class="num">8</div>
-        <div class="prompt-body">
-          <p class="context"><span class="tag">ITI</span><span class="tag">Higher ed</span>Planning a study or practice week</p>
-          <p class="text" data-prompt="Suggest a simple one-week plan to practise [subject or skill], with one rest day and no more than one hour a day.">Suggest a simple one-week plan to practise <span class="bracket">[subject or skill]</span>, with one rest day and no more than one hour a day.</p>
-        </div>
-        <button class="copy-btn" type="button">Copy</button>
-      </div>
-      <div class="prompt">
-        <div class="num">9</div>
-        <div class="prompt-body">
-          <p class="context"><span class="tag">ITI</span><span class="tag">Higher ed</span>Planning a small event</p>
-          <p class="text" data-prompt="Turn these notes into a short checklist for [event, e.g. a study group meet-up]: [paste your notes].">Turn these notes into a short checklist for <span class="bracket">[event, e.g. a study group meet-up]</span>: <span class="bracket">[paste your notes]</span>.</p>
-        </div>
-        <button class="copy-btn" type="button">Copy</button>
-      </div>
-      <div class="prompt">
-        <div class="num">10</div>
-        <div class="prompt-body">
-          <p class="context"><span class="tag">ITI</span><span class="tag">Higher ed</span>Summarising something quickly</p>
-          <p class="text" data-prompt="Summarise this in 3 plain-English bullet points: [paste any short text].">Summarise this in 3 plain-English bullet points: <span class="bracket">[paste any short text]</span>.</p>
-        </div>
-        <button class="copy-btn" type="button">Copy</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="checklist">
-    <h2>
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-      Before you use any answer
-    </h2>
-    <ul>
-      <li>
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
-        Read the whole answer. Do not copy or send the first line you see.
-      </li>
-      <li>
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
-        Check any name, date, number or fact against something you trust.
-      </li>
-      <li>
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
-        AI supports your work — it does not replace your teacher, facilitator or trade expertise.
-      </li>
-    </ul>
-  </div>
-
-  <div class="closing">
-    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-    <p><strong>Try it now.</strong> Pick one prompt above, replace the brackets with your own real (non-personal) details, and send it to your approved AI tool. Read the full answer before you use any of it.</p>
-  </div>
-
-  <footer>
-    <span>Swift AI Academy</span>
-    <span>PC 1.1 to 1.5 · English</span>
   </footer>
 
 </div>
